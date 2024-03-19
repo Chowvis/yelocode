@@ -24,8 +24,9 @@
            register
         </button>
     </form>
-    <h3>Total users: {{count($users)}}</h3>
+    <h3>Total users: </h3>
     @foreach ($users as $user)
         <h3>{{$user->name}}</h3>
     @endforeach
+    {{$users->links()}}
 </div>
