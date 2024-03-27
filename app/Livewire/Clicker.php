@@ -32,12 +32,14 @@ class Clicker extends Component
 
         $validate = $this->validate();
         if($this->image){
-            $validate['image'] = $this->image->store('uploads','public');
+            $validate['images'] = $this->image->store('uploads','public');
         }
-        User::create([
-            $validate,
-        ]);
-        $this->reset(['name','email','password']);
-        session()->flash('success','User has been created');
+
+
+
+        User::create($validate);
+        dd($validate);
+        // $this->reset(['name','email','password']);
+        // session()->flash('success','User has been created');
     }
 }
