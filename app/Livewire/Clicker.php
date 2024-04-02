@@ -35,9 +35,16 @@ class Clicker extends Component
             $validate['images'] = $this->image->store('uploads','public');
         }
 
-        User::create($validate);
+        $user = User::create($validate);
 
         $this->reset(['name','email','password',]);
         session()->flash('success','User has been created');
+
+        $this->dispatch('user-created',$user);
+    }
+
+    public function ReloadList()
+    {
+        $this->dispatch('user-created');
     }
 }
