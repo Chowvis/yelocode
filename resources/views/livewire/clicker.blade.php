@@ -43,13 +43,13 @@
             <span class="text-green-500">Uploading......</span>
         </div>
 
-
-        {{-- <button type="button" @click = "$dispatch('user-created')" class="bg-green-500 flex justify-center items-center text-white p-2 rounded-md">
-            Reload
-         </button> --}}
-        <button wire:loading.remove class="mt-3 bg-green-500 flex justify-center items-center text-white p-2 rounded-md">
+        <button class="bg-green-500 flex justify-center items-center text-white p-2 rounded-md">
            Create
         </button>
     </form>
-
+    <h3>Total users: </h3>
+    @foreach ($users as $user)
+        <h3>{{$user->name}}</h3>
+    @endforeach
+    {{$users->links('vendor.livewire.custom')}}
 </div>
