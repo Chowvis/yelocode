@@ -11,7 +11,7 @@
         {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.7/dist/cdn.min.js"></script>
+
 
     </head>
     <body class="antialiased">
